@@ -1,1 +1,11 @@
+precision highp float;
+
+uniform vec3 uColor;
+varying vec3 vNormal;
+
+void main() {
+    // Unreal Engine tarzı ışıklandırma simülasyonu
+    float light = dot(vNormal, normalize(vec3(1.0, 1.0, 1.0)));
+    gl_FragColor = vec4(uColor * light, 1.0);
+}
 
